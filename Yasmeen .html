@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #04c3fd;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Yasmeen Mukhtar</h1>
+</header>
+<img src="C:\Users\Hammad\Desktop\images.jpg" alt="description" width="150" height="150">
+
+
+<div class="container">
+    <section>
+        <h2>Personal Details</h2>
+        <p><strong>Name:</strong> <span id="Yasmeen Mukhtar">Your Name</span></p>
+        <p><strong>Email:</strong> <span id="email">yuldus11@gmail.com</span></p>
+        <p><strong>Phone:</strong> <span id="phone">03113085767</span></p>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <ul id="skills">
+            <li>JavaScript</li>
+            <li>HTML & CSS</li>
+            <li>Reading Books</li>
+            <li>Teaching</li>
+            <li>School</li>
+            <li>Cooking</li>
+          
+        </ul>
+        <button class="btn" onclick="addSkill()">Add Skill</button>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <ul id="projects">
+            <li><strong>Project 1:</strong> Dynamic Resume</li>
+            <li><strong>Project 2:</strong> Hackathon Management Tool</li>
+        </ul>
+        <button class="btn" onclick="addProject()">Add Project</button>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+        <ul id="experience">
+            <li><strong>Role:</strong> Frontend Developer</li>
+            <li><strong>Role:</strong> Hackathon Organizer</li>
+        </ul>
+        <button class="btn" onclick="addExperience()">Add Experience</button>
+    </section>
+</div>
+
+<script>
+    function addSkill() {
+        const skill = prompt("Enter a new skill:");
+        if (skill) {
+            const skillsList = document.getElementById("skills");
+            const li = document.createElement("li");
+            li.textContent = skill;
+            skillsList.appendChild(li);
+        }
+    }
+
+    function addProject() {
+        const project = prompt("Enter a new project:");
+        if (project) {
+            const projectsList = document.getElementById("projects");
+            const li = document.createElement("li");
+            li.innerHTML = `<strong>${project}:</strong> Description here`;
+            projectsList.appendChild(li);
+        }
+    }
+
+    function addExperience() {
+        const experience = prompt("Teacher At School For 5 Years:");
+        if (experience) {
+            const experienceList = document.getElementById("experience");
+            const li = document.createElement("li");
+            li.innerHTML = `<strong>Role:</strong> ${experience}`;
+            experienceList.appendChild(li);
+        }
+    }
+</script>
+
+</body>
+</html>
